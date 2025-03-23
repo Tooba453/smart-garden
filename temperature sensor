@@ -18,7 +18,7 @@ void checkTemp(){
    float temperature = tempValue * 3.3 * 100.0;
 
 
-   if(temperature>3){
+   if(temperature>27){
        DCfan=1;
         
    }
