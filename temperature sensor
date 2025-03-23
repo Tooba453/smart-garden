@@ -1,0 +1,29 @@
+#include "mbed.h"
+
+// main() runs in its own thread in the OS
+AnalogIn tempSensor(A0);
+DigitalOut DCfan(D2);
+void checkTemp();
+
+
+
+int main(){
+    while(true){
+        checkTemp();
+    }
+   
+}
+void checkTemp(){
+   float tempValue=tempSensor.read();
+   float temperature = tempValue * 3.3 * 100.0;
+
+
+   if(temperature>3){
+       DCfan=1;
+        
+   }
+   else{
+       DCfan=0;
+ 
+   }
+}
